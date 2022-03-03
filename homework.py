@@ -1,10 +1,12 @@
 import logging
 import os
 import time
+
 from http import HTTPStatus
 
 import requests
 import telegram
+
 from dotenv import load_dotenv
 
 import exceptions
@@ -27,7 +29,8 @@ TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 RETRY_TIME = 600
-ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
+BASE_URL = 'https://practicum.yandex.ru/api'
+ENDPOINT = f'{BASE_URL}/user_api/homework_statuses/'
 HEADERS = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
 
 
