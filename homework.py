@@ -7,7 +7,7 @@ import requests
 import telegram
 from dotenv import load_dotenv
 
-import exceptions
+import utils
 
 load_dotenv()
 
@@ -44,7 +44,7 @@ def send_message(bot, message):
     try:
         bot.send_message(TELEGRAM_CHAT_ID, message)
         logger.info('Сообщение отправлено')
-    except exceptions.UnableSendMessage as error:
+    except utils.exceptions.UnableSendMessage as error:
         message = f'Сообщение в Telegram не отправлено: {error}'
         logger.error(message)
 
